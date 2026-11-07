@@ -140,76 +140,6 @@ a{color:#A3261A}a:hover{color:#6E1B14}
 <p class="v3-links">Adapted from Supplementary Movie, <a href="https://doi.org/10.1038/s42004-026-02084-6">Karki et al., <em>Communications Chemistry</em> (2026)</a>.</p>
 </div>
 
-<div id="light-switch" class="ls-wrap">
-<div class="ls-head">
-<h3 class="ls-title">How a light switch becomes a signal</h3>
-<p class="ls-sub">Flip the light and watch what changes inside the phytochrome. A simplified schematic, not to scale.</p>
-</div>
-<div class="ls-grid">
-<div class="ls-stage" id="ls-stage">
-<svg class="ls-svg" viewBox="0 0 360 450" role="img" aria-labelledby="ls-svg-title">
-<title id="ls-svg-title">Schematic of a phytochrome dimer with its kinase domain and response regulator</title>
-<defs>
-<radialGradient id="ls-glow" cx="50%" cy="10%" r="80%"><stop offset="0%" class="ls-glow-stop" stop-opacity="0.55"/><stop offset="100%" class="ls-glow-stop" stop-opacity="0"/></radialGradient>
-</defs>
-<rect x="0" y="0" width="360" height="450" fill="url(#ls-glow)"/>
-<!-- photosensory core -->
-<g font-family="Inter, sans-serif" font-size="11" text-anchor="middle">
-<rect x="92" y="28" width="84" height="70" rx="14" fill="#1E8F98"/>
-<rect x="184" y="28" width="84" height="70" rx="14" fill="#D08A22"/>
-<text x="134" y="52" fill="#fff" font-weight="600">PAS-GAF</text>
-<text x="226" y="52" fill="#fff" font-weight="600">PAS-GAF</text>
-<circle cx="134" cy="74" r="9" fill="#FFE7A3"/>
-<circle cx="226" cy="74" r="9" fill="#FFE7A3" class="ls-chrom-b"/>
-<text x="134" y="78" fill="#3a2a00" font-size="9" font-weight="700">Pr</text>
-<text x="226" y="78" fill="#3a2a00" font-size="9" font-weight="700" class="ls-pr-b">Pr</text>
-<text x="226" y="78" fill="#3a2a00" font-size="8.5" font-weight="700" class="ls-pfr-b">Pfr</text>
-<rect x="100" y="104" width="68" height="44" rx="10" fill="#35A9B1"/>
-<rect x="192" y="104" width="68" height="44" rx="10" fill="#E3A43F"/>
-<text x="134" y="130" fill="#fff" font-weight="600">PHY</text>
-<text x="226" y="130" fill="#fff" font-weight="600">PHY</text>
-</g>
-<!-- coiled-coil linker: intact (Pr) -->
-<g class="ls-cc-pr" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M164 150 L172 162 L164 174 L172 186 L164 198 L172 210 L164 222 L172 234 L168 246" stroke="#1E8F98"/>
-<path d="M196 150 L188 162 L196 174 L188 186 L196 198 L188 210 L196 222 L188 234 L192 246" stroke="#D08A22"/>
-</g>
-<!-- coiled-coil linker: unwound (Pr/Pfr) -->
-<g class="ls-cc-pfr" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-<path d="M164 150 L172 162 L164 174 L172 186 L164 198 L172 210 L164 222 L172 234 L168 246" stroke="#1E8F98"/>
-<path d="M196 150 C 222 168, 208 186, 226 204 S 204 236, 192 246" stroke="#D08A22"/>
-</g>
-<!-- histidine kinase: rotates 180 degrees -->
-<g class="ls-hk">
-<rect x="166" y="250" width="12" height="74" rx="5" fill="#1E8F98"/>
-<rect x="182" y="250" width="12" height="74" rx="5" fill="#D08A22"/>
-<circle cx="138" cy="296" r="24" fill="#35A9B1"/>
-<circle cx="222" cy="296" r="24" fill="#E3A43F"/>
-<circle cx="172" cy="270" r="4" fill="#FFE7A3"/>
-</g>
-<g font-family="Inter, sans-serif" font-size="10.5" fill="#5E636D" text-anchor="middle">
-<text x="180" y="342">histidine kinase</text>
-</g>
-<!-- response regulator -->
-<g class="ls-rr">
-<ellipse cx="160" cy="378" rx="22" ry="14" fill="#6E63A8"/>
-<ellipse cx="202" cy="378" rx="22" ry="14" fill="#8A80C0"/>
-<text x="181" y="410" font-family="Inter, sans-serif" font-size="10.5" fill="#5E636D" text-anchor="middle">response regulator</text>
-</g>
-</svg>
-</div>
-<div class="ls-panel">
-<div class="ls-buttons" role="group" aria-label="Choose the light">
-<button type="button" class="ls-btn" id="ls-red" aria-pressed="false"><span class="ls-dot" style="background:#E0402B"></span>Red light</button>
-<button type="button" class="ls-btn" id="ls-farred" aria-pressed="true"><span class="ls-dot" style="background:#6B0F1A"></span>Far-red light</button>
-</div>
-<p class="ls-state" id="ls-state">Pr/Pr homodimer · resting state</p>
-<p class="ls-text" id="ls-text">Both protomers are in the red-absorbing Pr state. The coiled-coil helices hold the histidine kinase in its resting orientation, so it can phosphorylate itself and pass the phosphate on to the bound response regulator.</p>
-<button type="button" class="ls-3d" id="ls-3d">See this state in 3D · <span id="ls-3d-id">9YS3</span> →</button>
-</div>
-</div>
-</div>
-
 <div id="viewer3d" class="v3-wrap">
 <div class="v3-head">
 <div>
@@ -458,27 +388,6 @@ a{color:#A3261A}a:hover{color:#6E1B14}
   document.getElementById('v3-load').addEventListener('click',loadMolstar);
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.id);});});
 
-  // light switch explainer
-  var stage=document.getElementById('ls-stage'), red=document.getElementById('ls-red'), far=document.getElementById('ls-farred');
-  var st=document.getElementById('ls-state'), tx=document.getElementById('ls-text'), id3=document.getElementById('ls-3d-id');
-  var states={
-    dark:{id:'9ys3',state:'Pr/Pr homodimer · resting state',
-      text:'Both protomers are in the red-absorbing Pr state. The coiled-coil helices hold the histidine kinase in its resting orientation, so it can phosphorylate itself and pass the phosphate on to the bound response regulator.'},
-    light:{id:'9yxn',state:'Red light → Pr/Pfr heterodimer',
-      text:'Red light switches one protomer to Pfr. Its PHY tongue refolds from β-strands to an α-helix, the coiled-coil helices that connect the light sensor to the kinase unwind, and the kinase domain rotates by about 180°. This disrupts phosphorylation and phosphotransfer and loosens the complex with the response regulator. Far-red light switches it back.'}};
-  function setLight(on){
-    var s=states[on?'light':'dark'];
-    stage.classList.toggle('is-light',on);
-    red.setAttribute('aria-pressed',on?'true':'false'); far.setAttribute('aria-pressed',on?'false':'true');
-    st.textContent=s.state; tx.textContent=s.text; id3.textContent=s.id.toUpperCase();
-    if(viewer) show(s.id); else setTab(s.id);
-  }
-  red.addEventListener('click',function(){setLight(true);});
-  far.addEventListener('click',function(){setLight(false);});
-  document.getElementById('ls-3d').addEventListener('click',function(){
-    document.getElementById('viewer3d').scrollIntoView({behavior:'smooth',block:'start'});
-    if(!viewer) loadMolstar(); else show(current);
-  });
 })();
 </script>
 <script>
