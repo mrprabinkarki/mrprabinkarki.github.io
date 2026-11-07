@@ -17,6 +17,49 @@ a{color:#A3261A}a:hover{color:#6E1B14}
 .hero-portrait canvas{position:absolute;inset:0;width:100%;height:100%}
 .hero-portrait img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;display:block}
 </style>
+<style>
+.ls-wrap,.v3-wrap{background:#FFFFFF;border:1px solid #E6E2DC;border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1.5rem}
+.ls-title{margin:0;font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:600}
+.ls-sub{margin:.25rem 0 0;color:#5E636D}
+.ls-grid{display:flex;flex-wrap:wrap;gap:2rem;align-items:center}
+.ls-stage{flex:1 1 300px;max-width:420px;margin:0 auto;border-radius:14px;background:#F6F3EE;padding:.5rem}
+.ls-svg{width:100%;height:auto;display:block}
+.ls-panel{flex:999 1 320px;min-width:0;display:flex;flex-direction:column;gap:1rem}
+.ls-buttons{display:flex;flex-wrap:wrap;gap:.75rem}
+.ls-btn{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;padding:0 1.2rem;border-radius:999px;border:1px solid #C9C3BA;background:#fff;font:600 1rem Inter,sans-serif;color:#16181D;cursor:pointer;transition:background .2s,border-color .2s}
+.ls-btn[aria-pressed="true"]{background:#16181D;color:#fff;border-color:#16181D}
+.ls-dot{width:14px;height:14px;border-radius:50%;box-shadow:0 0 0 3px rgba(0,0,0,.06)}
+.ls-state{margin:0;font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:600}
+.ls-text{margin:0;color:#2A2D33;font-size:1.05rem;max-width:36rem}
+.ls-3d{align-self:flex-start;min-height:44px;padding:0;border:0;background:none;font:600 1rem Inter,sans-serif;color:#A3261A;cursor:pointer}
+.ls-3d:hover{color:#6E1B14;text-decoration:underline}
+.ls-glow-stop{stop-color:#6B0F1A;transition:stop-color .6s}
+.is-light .ls-glow-stop{stop-color:#E0402B}
+.ls-cc-pr,.ls-cc-pfr,.ls-pr-b,.ls-pfr-b,.ls-rr,.ls-hk{transition:opacity .7s,transform .9s cubic-bezier(.6,.05,.3,1)}
+.ls-cc-pfr,.ls-pfr-b{opacity:0}
+.is-light .ls-cc-pr,.is-light .ls-pr-b{opacity:0}
+.is-light .ls-cc-pfr,.is-light .ls-pfr-b{opacity:1}
+.ls-hk{transform-origin:180px 290px}
+.is-light .ls-hk{transform:scaleX(-1)}
+.is-light .ls-rr{transform:translateY(22px);opacity:.3}
+.ls-chrom-b{transition:fill .6s}
+.is-light .ls-chrom-b{fill:#9FD9C9}
+.v3-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem}
+.v3-tabs{display:flex;flex-wrap:wrap;gap:.5rem}
+.v3-tab{min-height:44px;padding:0 1rem;border-radius:999px;border:1px solid #C9C3BA;background:#fff;font:600 .95rem Inter,sans-serif;color:#16181D;cursor:pointer}
+.v3-tab[aria-selected="true"]{background:#16181D;color:#fff;border-color:#16181D}
+.v3-box{position:relative;height:480px;border-radius:14px;overflow:hidden;background:#0d1117}
+.v3-app{position:absolute;inset:0}
+.v3-cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:1.5rem;text-align:center;background:radial-gradient(80% 80% at 50% 40%,#18303a 0%,#0b1114 75%);color:#C9D6DA}
+.v3-load{min-height:48px;padding:0 1.5rem;border-radius:999px;border:0;background:#A3261A;color:#fff;font:600 1rem Inter,sans-serif;cursor:pointer}
+.v3-load:hover{background:#6E1B14}
+.v3-note{margin:0;font-size:.85rem;max-width:22rem;color:#A9B8BD}
+.v3-links{margin:0;color:#5E636D;font-size:.9rem}
+@media (max-width:600px){.ls-wrap,.v3-wrap{padding:1.25rem}.v3-box{height:380px}}
+@media (prefers-reduced-motion:reduce){.ls-cc-pr,.ls-cc-pfr,.ls-pr-b,.ls-pfr-b,.ls-rr,.ls-hk{transition:none}}
+.mv-box{border-radius:14px;overflow:hidden;background:#1b1c1f;box-shadow:0 12px 32px rgba(10,14,30,.25)}
+.mv-video{display:block;width:100%;height:auto;aspect-ratio:1280/880;background:#1b1c1f}
+</style>
 </head>
 <body>
 <div style="font-family: Inter, system-ui, sans-serif; color: #16181D; background: #FBFAF8; line-height: 1.6; font-size: 1rem">
@@ -84,6 +127,108 @@ a{color:#A3261A}a:hover{color:#6E1B14}
 <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 600">Time-resolved crystallography</h3>
 <p style="margin: 0; color: #3D414A">Serial crystallography at synchrotrons and X-ray free-electron lasers to follow structural changes in photoreceptors and enzymes, in collaboration with groups in the US and Europe.</p>
 </div>
+</div>
+
+<div id="morph" class="ls-wrap">
+<div class="ls-head">
+<h3 class="ls-title">Watch the switch happen</h3>
+<p class="ls-sub">A morph between my two cryo-EM structures: the Pr/Pr homodimer (9YS3) and the Pr/Pfr heterodimer (9YXN).</p>
+</div>
+<div class="mv-box">
+<video id="morph-video" class="mv-video" src="morph-labeled.mp4" poster="morph-poster.jpg" muted loop playsinline preload="metadata" controls aria-label="Labeled morph from the Pr/Pr homodimer to the Pr/Pfr heterodimer of SaBphP2. The histidine kinase domains rotate by about 180 degrees while the PHY tongue of one protomer refolds from beta-strands to an alpha-helix."></video>
+</div>
+<p class="v3-links">Adapted from Supplementary Movie, <a href="https://doi.org/10.1038/s42004-026-02084-6">Karki et al., <em>Communications Chemistry</em> (2026)</a>.</p>
+</div>
+
+<div id="light-switch" class="ls-wrap">
+<div class="ls-head">
+<h3 class="ls-title">How a light switch becomes a signal</h3>
+<p class="ls-sub">Flip the light and watch what changes inside the phytochrome. A simplified schematic, not to scale.</p>
+</div>
+<div class="ls-grid">
+<div class="ls-stage" id="ls-stage">
+<svg class="ls-svg" viewBox="0 0 360 450" role="img" aria-labelledby="ls-svg-title">
+<title id="ls-svg-title">Schematic of a phytochrome dimer with its kinase domain and response regulator</title>
+<defs>
+<radialGradient id="ls-glow" cx="50%" cy="10%" r="80%"><stop offset="0%" class="ls-glow-stop" stop-opacity="0.55"/><stop offset="100%" class="ls-glow-stop" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="0" y="0" width="360" height="450" fill="url(#ls-glow)"/>
+<!-- photosensory core -->
+<g font-family="Inter, sans-serif" font-size="11" text-anchor="middle">
+<rect x="92" y="28" width="84" height="70" rx="14" fill="#1E8F98"/>
+<rect x="184" y="28" width="84" height="70" rx="14" fill="#D08A22"/>
+<text x="134" y="52" fill="#fff" font-weight="600">PAS-GAF</text>
+<text x="226" y="52" fill="#fff" font-weight="600">PAS-GAF</text>
+<circle cx="134" cy="74" r="9" fill="#FFE7A3"/>
+<circle cx="226" cy="74" r="9" fill="#FFE7A3" class="ls-chrom-b"/>
+<text x="134" y="78" fill="#3a2a00" font-size="9" font-weight="700">Pr</text>
+<text x="226" y="78" fill="#3a2a00" font-size="9" font-weight="700" class="ls-pr-b">Pr</text>
+<text x="226" y="78" fill="#3a2a00" font-size="8.5" font-weight="700" class="ls-pfr-b">Pfr</text>
+<rect x="100" y="104" width="68" height="44" rx="10" fill="#35A9B1"/>
+<rect x="192" y="104" width="68" height="44" rx="10" fill="#E3A43F"/>
+<text x="134" y="130" fill="#fff" font-weight="600">PHY</text>
+<text x="226" y="130" fill="#fff" font-weight="600">PHY</text>
+</g>
+<!-- coiled-coil linker: intact (Pr) -->
+<g class="ls-cc-pr" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M164 150 L172 162 L164 174 L172 186 L164 198 L172 210 L164 222 L172 234 L168 246" stroke="#1E8F98"/>
+<path d="M196 150 L188 162 L196 174 L188 186 L196 198 L188 210 L196 222 L188 234 L192 246" stroke="#D08A22"/>
+</g>
+<!-- coiled-coil linker: unwound (Pr/Pfr) -->
+<g class="ls-cc-pfr" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M164 150 L172 162 L164 174 L172 186 L164 198 L172 210 L164 222 L172 234 L168 246" stroke="#1E8F98"/>
+<path d="M196 150 C 222 168, 208 186, 226 204 S 204 236, 192 246" stroke="#D08A22"/>
+</g>
+<!-- histidine kinase: rotates 180 degrees -->
+<g class="ls-hk">
+<rect x="166" y="250" width="12" height="74" rx="5" fill="#1E8F98"/>
+<rect x="182" y="250" width="12" height="74" rx="5" fill="#D08A22"/>
+<circle cx="138" cy="296" r="24" fill="#35A9B1"/>
+<circle cx="222" cy="296" r="24" fill="#E3A43F"/>
+<circle cx="172" cy="270" r="4" fill="#FFE7A3"/>
+</g>
+<g font-family="Inter, sans-serif" font-size="10.5" fill="#5E636D" text-anchor="middle">
+<text x="180" y="342">histidine kinase</text>
+</g>
+<!-- response regulator -->
+<g class="ls-rr">
+<ellipse cx="160" cy="378" rx="22" ry="14" fill="#6E63A8"/>
+<ellipse cx="202" cy="378" rx="22" ry="14" fill="#8A80C0"/>
+<text x="181" y="410" font-family="Inter, sans-serif" font-size="10.5" fill="#5E636D" text-anchor="middle">response regulator</text>
+</g>
+</svg>
+</div>
+<div class="ls-panel">
+<div class="ls-buttons" role="group" aria-label="Choose the light">
+<button type="button" class="ls-btn" id="ls-red" aria-pressed="false"><span class="ls-dot" style="background:#E0402B"></span>Red light</button>
+<button type="button" class="ls-btn" id="ls-farred" aria-pressed="true"><span class="ls-dot" style="background:#6B0F1A"></span>Far-red light</button>
+</div>
+<p class="ls-state" id="ls-state">Pr/Pr homodimer · resting state</p>
+<p class="ls-text" id="ls-text">Both protomers are in the red-absorbing Pr state. The coiled-coil helices hold the histidine kinase in its resting orientation, so it can phosphorylate itself and pass the phosphate on to the bound response regulator.</p>
+<button type="button" class="ls-3d" id="ls-3d">See this state in 3D · <span id="ls-3d-id">9YS3</span> →</button>
+</div>
+</div>
+</div>
+
+<div id="viewer3d" class="v3-wrap">
+<div class="v3-head">
+<div>
+<h3 class="ls-title">Explore the structures in 3D</h3>
+<p class="ls-sub">Cryo-EM models from <a href="https://doi.org/10.1038/s42004-026-02084-6">Karki et al., <em>Communications Chemistry</em> (2026)</a>. Drag to rotate, scroll or pinch to zoom.</p>
+</div>
+<div class="v3-tabs" role="tablist" aria-label="Choose a structure">
+<button type="button" role="tab" class="v3-tab" data-id="9ys3" aria-selected="true">Pr/Pr homodimer · 9YS3</button>
+<button type="button" role="tab" class="v3-tab" data-id="9yxn" aria-selected="false">Pr/Pfr heterodimer · 9YXN</button>
+</div>
+</div>
+<div class="v3-box">
+<div id="molstar-app" class="v3-app"></div>
+<div class="v3-cover" id="v3-cover">
+<button type="button" class="v3-load" id="v3-load">Load interactive 3D viewer</button>
+<p class="v3-note">Loads the free Mol* viewer (about 5 MB) and the model from the Protein Data Bank.</p>
+</div>
+</div>
+<p class="v3-links">On RCSB PDB: <a href="https://www.rcsb.org/structure/9YS3">9YS3</a> · <a href="https://www.rcsb.org/structure/9YXN">9YXN</a></p>
 </div>
 </section>
 
@@ -236,12 +381,15 @@ a{color:#A3261A}a:hover{color:#6E1B14}
   function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
   size(); window.addEventListener('resize',size);
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mx=0,my=0,tx=0,ty=0;
+  window.addEventListener('pointermove',function(e){tx=(e.clientX/window.innerWidth-0.5);ty=(e.clientY/window.innerHeight-0.5);},{passive:true});
   function colour(i,d,a){ // coral at the start of the chain, teal for the rest
     var f=Math.min(1,Math.max(0,(i/N-0.12)/0.1));
     var hue=10+(178-10)*f, sat=70-15*f, lit=48+22*d;
     return 'hsla('+hue+','+sat+'%,'+lit+'%,'+a+')';}
   function draw(time){
-    var ang=time*0.00012, tilt=0.25+0.08*Math.sin(time*0.00007);
+    mx+=(tx-mx)*0.05; my+=(ty-my)*0.05;
+    var ang=time*0.00012+mx*0.7, tilt=0.25+0.08*Math.sin(time*0.00007)+my*0.35;
     ctx.clearRect(0,0,W,H);
     var ca=Math.cos(ang),sa=Math.sin(ang),ct=Math.cos(tilt),st=Math.sin(tilt);
     var scale=Math.min(W,H)/26, cam=48, cx=W/2, cy=H*0.42;
@@ -279,6 +427,68 @@ a{color:#A3261A}a:hover{color:#6E1B14}
     if(!reduce) requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
+})();
+</script>
+<script>
+(function(){
+  var MS='https://cdn.jsdelivr.net/npm/molstar@5.13.1/build/viewer/';
+  var viewer=null, loading=null, current='9ys3';
+  var tabs=[].slice.call(document.querySelectorAll('.v3-tab'));
+  function setTab(id){current=id;tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.id===id?'true':'false');});}
+  function loadMolstar(){
+    if(loading) return loading;
+    var cover=document.getElementById('v3-cover'), btn=document.getElementById('v3-load');
+    btn.textContent='Loading…'; btn.disabled=true;
+    loading=new Promise(function(res,rej){
+      var l=document.createElement('link');l.rel='stylesheet';l.href=MS+'molstar.css';document.head.appendChild(l);
+      var sc=document.createElement('script');sc.src=MS+'molstar.js';sc.onload=res;sc.onerror=rej;document.head.appendChild(sc);
+    }).then(function(){
+      return molstar.Viewer.create('molstar-app',{layoutIsExpanded:false,layoutShowControls:false,layoutShowRemoteState:false,
+        layoutShowSequence:false,layoutShowLog:false,layoutShowLeftPanel:false,collapseLeftPanel:true,
+        viewportShowExpand:true,viewportShowSelectionMode:false,viewportShowAnimation:false,pdbProvider:'rcsb'});
+    }).then(function(v){viewer=v;cover.style.display='none';return viewer.loadPdb(current);})
+      .catch(function(){btn.disabled=false;btn.textContent='Could not load. Tap to retry';loading=null;});
+    return loading;
+  }
+  function show(id){
+    setTab(id);
+    if(!viewer) return;
+    Promise.resolve(viewer.plugin.clear()).then(function(){return viewer.loadPdb(id);});
+  }
+  document.getElementById('v3-load').addEventListener('click',loadMolstar);
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.id);});});
+
+  // light switch explainer
+  var stage=document.getElementById('ls-stage'), red=document.getElementById('ls-red'), far=document.getElementById('ls-farred');
+  var st=document.getElementById('ls-state'), tx=document.getElementById('ls-text'), id3=document.getElementById('ls-3d-id');
+  var states={
+    dark:{id:'9ys3',state:'Pr/Pr homodimer · resting state',
+      text:'Both protomers are in the red-absorbing Pr state. The coiled-coil helices hold the histidine kinase in its resting orientation, so it can phosphorylate itself and pass the phosphate on to the bound response regulator.'},
+    light:{id:'9yxn',state:'Red light → Pr/Pfr heterodimer',
+      text:'Red light switches one protomer to Pfr. Its PHY tongue refolds from β-strands to an α-helix, the coiled-coil helices that connect the light sensor to the kinase unwind, and the kinase domain rotates by about 180°. This disrupts phosphorylation and phosphotransfer and loosens the complex with the response regulator. Far-red light switches it back.'}};
+  function setLight(on){
+    var s=states[on?'light':'dark'];
+    stage.classList.toggle('is-light',on);
+    red.setAttribute('aria-pressed',on?'true':'false'); far.setAttribute('aria-pressed',on?'false':'true');
+    st.textContent=s.state; tx.textContent=s.text; id3.textContent=s.id.toUpperCase();
+    if(viewer) show(s.id); else setTab(s.id);
+  }
+  red.addEventListener('click',function(){setLight(true);});
+  far.addEventListener('click',function(){setLight(false);});
+  document.getElementById('ls-3d').addEventListener('click',function(){
+    document.getElementById('viewer3d').scrollIntoView({behavior:'smooth',block:'start'});
+    if(!viewer) loadMolstar(); else show(current);
+  });
+})();
+</script>
+<script>
+(function(){
+  var v=document.getElementById('morph-video'); if(!v) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else v.pause();
+  });},{threshold:0.35}).observe(v);
 })();
 </script>
 </body>
